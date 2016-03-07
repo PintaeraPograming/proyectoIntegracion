@@ -1,0 +1,76 @@
+body{
+	background-color:#333333; 
+	margin: 0;
+	padding: 0;
+}
+form{
+	margin-top:50px;
+	background-color:#aaaaab;
+	padding:10px;
+	text-align:center;
+	height:110px;
+}
+.contenedor{
+	width:350px;
+	margin: 0 auto;
+}
+.input{
+	float:right;
+}
+.laravel{
+	float:left;
+}
+.inicio{
+	margin: 0 auto;
+	padding-top:10px;
+	width:260px;
+}
+.cita{
+	margin-top:50px;
+	background-color:#aaaaab;
+	padding:10px;
+	text-align:center;
+	width:80%;
+	margin: 0 auto;
+	height:80%;
+}
+.divTabla{
+	margin: 0 auto;
+	width:50%;
+	text-align:center;
+}
+.texto{
+	text-align:center;
+	display: block;
+	margin: 0 auto;
+	padding:20px;
+}
+.tabla, th, td{
+	margin: 0 auto;
+	border:1px dotted;
+}
+td, th{
+	padding:5px;
+}
+td{
+	text-align:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

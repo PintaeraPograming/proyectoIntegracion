@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Gestion citas</title>
+		<link rel="stylesheet" href="../src/stilo.css"/>
+		<script type="text/javascript" src="../src/script.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body onload="date();">
+		<h1>Bienvenido: {usuario}</h1>
+		
+		<form class="cita" name="form" action="../c/cita.php" method="post">
+			<label class="texto">Seleccione la fecha en la que desearia sacar una cita:</label>
+			<div id="div"></div>
+			<h3>{tabla}</h3>
+			<input type='submit' value='Reservar'/>
+		</form>
+	</body>
+</html>

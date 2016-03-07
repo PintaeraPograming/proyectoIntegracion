@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Iniciar sesion</title>
+		<link rel="stylesheet" href="../src/stilo.css"/>
+		<script type="text/javascript" src="../src/script.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body onload="borrarCookies();">
+		<div class="contenedor">
+			<form action="../c/index.php" method="post">
+				<div class="inicio">
+					<label class="laravel">Usuario: </label><input class="input" type="text" name=usuario autofocus/> <br><br>
+					<label class="laravel">Contraseña: </label><input class="input" type="password" name=contrasenia /> <br><br>
+					<input type="submit" value="Iniciar sesión"/>
+					<a href="#">Registráte o no, veremos</a>
+				</div>
+				<h3>{mensajito}</h3>
+			</form>
+		</div>
+	</body>
+</html>
