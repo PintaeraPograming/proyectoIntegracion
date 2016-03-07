@@ -18,7 +18,7 @@
 			echo getTemplateTocho("cita", '{usuario}', $usuario);
 		}
 		if($misCitas != ""){
-			echo getTemplateTocho("misCitas", '{usuario}', $usuario);
+			getMisCitas($usuario);
 		}
 		if($salir != ""){
 			unset($_SESSION["usuario"]);

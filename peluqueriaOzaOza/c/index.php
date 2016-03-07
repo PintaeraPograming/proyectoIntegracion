@@ -4,7 +4,6 @@
 	session_start();
 	
 	unset($_SESSION["usuario"]);
-	unset($_SESSION["nombre"]);
 	
 	$usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : '';
 	$contraseña = isset($_POST["contrasenia"]) ? $_POST["contrasenia"] : '';	

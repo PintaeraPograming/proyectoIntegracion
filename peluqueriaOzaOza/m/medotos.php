@@ -45,17 +45,21 @@
 		$mySQLi = conectar();
 		$mySQLi->real_query("SELECT hora, fecha, motivo FROM citas WHERE usuario LIKE '$usuario'");
 		$resultado = $mySQLi->use_result();
-		
-		$misCitas = "<table><th>Hora</th><th>Fecha</th><th>Motivo</th>";
-		
-		while ($fila = $resultado->fetch_assoc()) {
-			$misCitas .= "<tr><td>" . $fila['hora'] . "</td>";
-			$misCitas .= "<td>" . $fila['fecha'] . "</td>";
-			$misCitas .= "<td>" . $fila['motivo'] . "</td></tr>";
+
+		if($resultado->num_rows != 0){
+			
+			$misCitas = "<table><th>Hora</th><th>Fecha</th><th>Motivo</th>";
+			
+			while ($fila = $resultado->fetch_assoc()) {
+				$misCitas .= "<tr><td>" . $fila['hora'] . "</td>";
+				$misCitas .= "<td>" . $fila['fecha'] . "</td>";
+				$misCitas .= "<td>" . $fila['motivo'] . "</td></tr>";
+			}
+			
+			$misCitas .= "</table>";
+		}else{
+			$misCitas = "No tienes ninguna cita";
 		}
-		
-		$misCitas .= "</table>";
-		
 		$cajita = array (
 				"{usuario}" => $usuario,
 				"{misCitas}" => $misCitas,

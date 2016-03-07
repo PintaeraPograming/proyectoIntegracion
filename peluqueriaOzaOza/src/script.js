@@ -7,21 +7,26 @@ function date(){
 	var mes = (fecha.getMonth()+ 1) + "";
 	var anio = fecha.getFullYear();
 	var dia = fecha.getDate();
-	
 	if(mes.length == 1 ){
 		mes = "0" + mes;
 	}
-	
-	fechaMin = anio + "-" + mes +"-" + dia ;
 	fechaMax = anio + "-" + mes + "-" + (dia + 7);
+	dia += ""; 
+	if(dia.length == 1 ){
+		diaMin = "0" + dia;
+	}
+	
+	fechaMin = anio + "-" + mes +"-" + diaMin ;
 
 	var cadena = "<input type='date' id='fecha' name='select' min='" + fechaMin + "' max='" + fechaMax + "' onchange='formuliar();'>";
 	document.getElementById("div").innerHTML = cadena;
-	
+
 	document.cookie = "usuario=paco";	
 }
 
 function formuliar(){
+	document.getElementsByName("reserva").disbled=true;
+	document.getElementsByName("reserva").disbled=false;
 	document.form.submit();
 }
 
