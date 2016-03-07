@@ -29,8 +29,8 @@
 			$hora = $i . ":00";
 			$tabla .=  "<tr>";
 			if (getCita($fecha, $hora)->num_rows == 0){
-				$tabla .= "<td>" . $hora . "</td><td><input type='radio' id='si' name='reserva' value='" . $hora . "'></td>
-						<td><select name='motivo'><option>Corte</option><option>Peinado</option><option>Tinte</option><option>Blanqueamiento</option></select></td>";
+				$tabla .= "<td>" . $hora . "</td><td><input type='radio' id='" . $i  . "' name='reserva' value='" . $hora . "'></td>
+						<td><select id='" . $i . "' name='motivo'><option>Corte</option><option>Peinado</option><option>Tinte</option><option>Blanqueamiento</option></select></td>";
 			}else{
 				$tabla .= "<td>" . $hora . "</td><td><label>Reservado</label></td><td>Reservado</td>";
 			}
