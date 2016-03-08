@@ -1,28 +1,30 @@
 <?PHP
-	require "../m/medotos.php";
+	require "../m/baseDatos.php";
 	require "../m/metodos.php";
-	session_start();
 	
-	$usuario = $_SESSION["usuario"];
+	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
 	
+	echo getTemplateTocho("menu", '{usuario}', $usuario);
 	
 	$nuevaCita = isset($_POST["nuevaCita"]) ? $_POST["nuevaCita"] : '';
 	$misCitas = isset($_POST["misCitas"]) ? $_POST["misCitas"] : '';
 	$salir = isset($_POST["salir"]) ? $_POST["salir"] : '';
 	
 	if ($nuevaCita != "" && $misCitas != "" && $salir != "") {
+		//echo "<script>document.location.reload();</script>";
 		
-		echo getTemplateTocho("menu", '{usuario}', $usuario);
 	}else{
 		if($nuevaCita != ""){
-			echo getTemplateTocho("cita", '{usuario}', $usuario);
+			header('Location: cita.php');
+			//echo getTemplateTocho("cita", '{usuario}', $usuario);
 		}
 		if($misCitas != ""){
-			getMisCitas($usuario);
+			header('Location: misCitas.php');
 		}
 		if($salir != ""){
 			unset($_SESSION["usuario"]);
-			echo getTemplateTocho("inicio", '{mensajito}', "");
+			header('Location: index.php');
+			//echo getTemplateTocho("inicio", '{mensajito}', "");
 		}
 	}
 	

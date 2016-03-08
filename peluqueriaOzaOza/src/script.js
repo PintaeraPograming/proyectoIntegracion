@@ -21,7 +21,8 @@ function date(){
 	var cadena = "<input type='date' id='fecha' name='select' min='" + fechaMin + "' max='" + fechaMax + "' onchange='formuliar();'>";
 	document.getElementById("div").innerHTML = cadena;
 
-	document.cookie = "usuario=paco";	
+	document.cookie = "usuario=paco";
+	document.form.reset();
 }
 
 function formuliar(){

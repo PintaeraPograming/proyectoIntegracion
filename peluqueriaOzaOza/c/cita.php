@@ -1,19 +1,23 @@
 <?PHP
-	require "../m/medotos.php";
+	require "../m/baseDatos.php";
 	require "../m/metodos.php";
-	session_start ();
 	
 	$horaS = isset ( $_POST ["reserva"] ) ? $_POST ["reserva"] : '';
 	$fechaMal = isset ( $_POST ["select"] ) ? $_POST ["select"] : '';
 	$boton = isset ( $_POST ["boton"] ) ? $_POST ["boton"] : '';
-
+	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
+	
+	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
+	if($atras != ""){
+		header('Location: menu.php');
+	}
+	
 	if ($fechaMal != "") {
 		$_SESSION ["fechaMal"] = $fechaMal;
 	}
 	
-	$fechaActual = isset ( $_SESSION ["fechaMal"] ) ? $_SESSION ["fechaMal"] : date("d/m/Y");
+	$fechaActual = isset ( $_SESSION ["fechaMal"] ) ? $_SESSION ["fechaMal"] : date("Y/m/d");
 	
-	$usuario = $_SESSION ["usuario"];
 	$hora = "";
 	$tabla = "";
 	$fecha = "";
@@ -38,8 +42,7 @@
 	if ($horaS != '' && $boton == "Reservar") {
 		$horaC = split("#", $horaS);
 		$motivo = isset ( $_POST [$horaC[1]] ) ? $_POST [$horaC[1]] : '';
-		setCita ($usuario, $fecha, $horaC[0], $motivo );
-		echo "<script>alert('Se ha reservado con exito!')</script>";
+		setCita ($usuario, $fecha, $horaC[0], $motivo );		
 	}
 	
 	$array = array (

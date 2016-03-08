@@ -1,7 +1,6 @@
 <?php
- 	require "../m/medotos.php";
+ 	require "../m/baseDatos.php";
  	require "../m/metodos.php";
-	session_start();
 	
 	unset($_SESSION["usuario"]);
 	
@@ -10,10 +9,12 @@
 	
 	if ($usuario != "" && $contraseña != "") {
 		$resultado = inicioSesion($usuario, $contraseña);
+		$_SESSION["usuario"] = $usuario;
 		
 		if ($resultado->num_rows > 0) {
-			$_SESSION["usuario"] = $usuario;
+			header('Location: menu.php');
 			echo getTemplateTocho("menu", '{usuario}', $usuario);
+			exit();
 		} else {
 			echo getTemplateTocho("inicio", '{mensajito}', "Usuario o contraseña incorrectos");
 		}
