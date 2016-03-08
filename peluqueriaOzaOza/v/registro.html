@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Registro</title>
+		<link rel="shortcut icon" href="../src/img/icono.png">
+		<link rel="stylesheet" href="../src/css/stilo.css"/>
+		<script type="text/javascript" src="../src/js/script.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+				<h1>Bienvenido: nuevo usuario</h1>
+		<form class="cita" name="form" action="../c/registro.php" method="post">
+			<label class="texto" id="nombre">Nombre:</label><input type='text' name="nombre" 
+			onblur="alert(document.getElementById('usuario').value=document.getElementById('nombre').value)"/>
+			<label class="texto">Apellidos:</label><input type='text' name="apellidos"/>
+			<label class="texto" id="usuario">Usuario:</label><input type='text' name="usuario"/>
+			
+			<br><br><input type='submit' name="registro" value='Registrarme'/>
+		</form>
+	</body>
+</html>

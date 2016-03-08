@@ -1,4 +1,4 @@
-<?php 
+<?PHP
 	require "../m/baseDatos.php";
 	require "../m/metodos.php";
 	
@@ -6,8 +6,8 @@
 	
 	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
 	if($atras != ""){
-		header('Location: menu.php');
+		header('Location: index.php');
 	}
 	
-	getMisCitas($usuario);
+	echo getTemplate("registro");
 ?>
