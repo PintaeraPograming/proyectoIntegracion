@@ -12,12 +12,12 @@
 	if($nombre != "" && $apellidos != "" && $user != "" && $pass != ""){
 		setUsuario($user, $pass, $nombre, $apellidos);
 		$_SESSION ["usuario"] = $user;
-		header('Location: menu.php');
+		header('Location: panelControl.php');
 	}
 	
 	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
 	if($atras != ""){
-		header('Location: index.php');
+		header('Location: panelControl.php');
 	}
 	
 	echo getTemplate("registro");

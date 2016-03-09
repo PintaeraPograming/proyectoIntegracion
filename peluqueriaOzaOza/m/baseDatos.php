@@ -4,7 +4,7 @@
 	// Control de error en caso de que ocurra un error
 	// Devuelve un objeto mysqli
 	function conectar(){
-		$mysqli = new mysqli ( "localhost", "root", "root", "peluqueria");
+		$mysqli = new mysqli ( "localhost", "root", "", "peluqueria");
 		if ($mysqli->connect_errno) {
 			echo "Fallo la conexión con MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -15,11 +15,11 @@
 	// Busca una coincidencia con un usuario y contraseña concretos.
 	// Devuelve un numero mayor o menor a 0.
 	function inicioSesion($usuario, $contraseña) {
-		return conectar ()->query( "SELECT * FROM usuario WHERE nombre LIKE '$usuario' AND contrasenia LIKE '$contraseña'");
+		return conectar ()->query( "SELECT * FROM usuarios WHERE usuario LIKE '$usuario' AND contrasenia LIKE '$contraseña'");
 	}
 	
 	// Hace una consulta a la base de datos.
-	// Busca una coincidencia con un usuario y contraseña concretos.
+	// Busca una coincidencia con una fecha y horas concretss.
 	// Devuelve un numero mayor o menor a 0.
 	function getCita($fecha, $hora){
 		return conectar()->query("SELECT * FROM citas WHERE fecha LIKE '$fecha' AND hora LIKE '$hora'");
@@ -50,29 +50,25 @@
 	// Devuelve la hora, fecha y motivo de las citas de un usuario.
 	function getMisCitas($usuario){
 		
-		$resultado = conectar()->query( "SELECT hora, fecha, motivo FROM citas WHERE usuario LIKE '$usuario'");
+		return conectar()->query( "SELECT hora, fecha,usuario, motivo FROM citas WHERE usuario LIKE '$usuario'");	
+	}
+	
+	function getCitas(){
+	
+		return conectar()->query( "SELECT hora, fecha,usuario, motivo FROM citas");
+	}
 		
-		if( $resultado->num_rows != 0){
+	// Realiza un insert en la base de datos
+	// En la tabla usuarios
+	// No devuelve nada
+	function setUsuario($usuario, $contraseña, $nombre, $apellidos){
 			
-			$misCitas = "<table><th>Hora</th><th>Fecha</th><th>Motivo</th>";
+		$resultado = conectar()->query( "SELECT * FROM usuarios WHERE usuario LIKE '$usuario'");
 			
-			while ($fila = $resultado->fetch_assoc()) {
-				$misCitas .= "<tr><td>" . $fila['hora'] . "</td>";
-				$misCitas .= "<td>" . $fila['fecha'] . "</td>";
-				$misCitas .= "<td>" . $fila['motivo'] . "</td></tr>";
-			}
-			
-			$misCitas .= "</table>";
-		}else{
-			$misCitas = "No tienes ninguna cita";
+		if($resultado->num_rows == 0){
+			conectar()->query("INSERT INTO usuarios (usuario, contrasenia, nombre, apellidos) VALUES('" . $usuario . "','" . $contraseña . "','" . $nombre . "','" . $apellidos ."')");
+			//echo "<script>alert('¡Te has registrado con éxito!');";	
 		}
-		
-		$cajita = array (
-				"{usuario}" => $usuario,
-				"{misCitas}" => $misCitas,
-		);
-		
-		echo getTemplateReContraTocho("misCitas", $cajita);
 	}
 ?>
 

@@ -6,18 +6,19 @@
 	
 	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
 	if($atras != ""){
-		header('Location: menu.php');
+		header('Location: panelControl.php');
 	}
 	
-	$resultado = getMisCitas($usuario);
+	$resultado = getCitas();
 	
 	if( $resultado->num_rows != 0){
 			
-		$misCitas = "<table><th>Hora</th><th>Fecha</th><th>Motivo</th>";
+		$misCitas = "<table><th>Hora</th><th>Fecha</th><th>Cliente</th><th>Motivo</th>";
 			
 		while ($fila = $resultado->fetch_assoc()) {
 			$misCitas .= "<tr><td>" . $fila['hora'] . "</td>";
 			$misCitas .= "<td>" . $fila['fecha'] . "</td>";
+			$misCitas .= "<td>" . $fila['usuario'] . "</td>";
 			$misCitas .= "<td>" . $fila['motivo'] . "</td></tr>";
 		}
 			
@@ -31,5 +32,5 @@
 			"{misCitas}" => $misCitas,
 	);
 	
-	echo getTemplateReContraTocho("misCitas", $cajita);
+	echo getTemplateReContraTocho("misCitasAdmin", $cajita);
 ?>

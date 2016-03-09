@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2016 a las 11:08:40
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 09-03-2016 a las 01:19:49
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `peluqueria`
 --
+CREATE DATABASE IF NOT EXISTS `peluqueria` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `peluqueria`;
 
 -- --------------------------------------------------------
 
@@ -26,42 +28,33 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `citas`
 --
 
-CREATE TABLE IF NOT EXISTS `citas` (
-  `id` int(2) NOT NULL,
-  `usuario` varchar(12) NOT NULL,
+CREATE TABLE `citas` (
+  `usuario` varchar(20) NOT NULL,
   `fecha` varchar(10) NOT NULL,
   `hora` varchar(5) NOT NULL,
-  `motivo` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `citas`
---
-
-INSERT INTO `citas` (`id`, `usuario`, `fecha`, `hora`, `motivo`) VALUES
-(12, 'admin', '29/02/2016', '8:00', 'Corte'),
-(13, 'admin', '07/03/2016', '8:00', 'Corte'),
-(14, 'admin', '07/03/2016', '11:00', 'Corte'),
-(15, 'admin', '08/03/2016', '10:00', 'Corte');
+  `motivo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(11) NOT NULL,
-  `contrasenia` varchar(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+CREATE TABLE `usuarios` (
+  `usuario` varchar(20) NOT NULL,
+  `contrasenia` varchar(16) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellidos` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `contrasenia`) VALUES
-(1, 'admin', 'root');
+INSERT INTO `usuarios` (`usuario`, `contrasenia`, `nombre`, `apellidos`) VALUES
+('admin', 'root', 'Pintaera', 'Pograming'),
+('usuario', '1234', 'Usuario', 'To''Loco');
 
 --
 -- Índices para tablas volcadas
@@ -71,28 +64,14 @@ INSERT INTO `usuario` (`id`, `nombre`, `contrasenia`) VALUES
 -- Indices de la tabla `citas`
 --
 ALTER TABLE `citas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`fecha`,`hora`);
 
 --
--- Indices de la tabla `usuario`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`usuario`);
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `citas`
---
-ALTER TABLE `citas`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
