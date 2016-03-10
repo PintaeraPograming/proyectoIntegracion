@@ -2,7 +2,7 @@ function date(){
 	if(document.cookie.indexOf('usuario') == -1){
 		document.form.submit();
 	}
-		
+	
 	var fecha = new Date();
 	var mes = (fecha.getMonth()+ 1) + "";
 	var anio = fecha.getFullYear();
@@ -10,17 +10,22 @@ function date(){
 	if(mes.length == 1 ){
 		mes = "0" + mes;
 	}
+	
 	fechaMax = anio + "-" + mes + "-" + (dia + 7);
 	dia += ""; 
+	
 	if(dia.length == 1 ){
 		diaMin = "0" + dia;
+	}else{
+		diaMin = dia;
 	}
 	
+	
 	fechaMin = anio + "-" + mes +"-" + diaMin ;
-
+	
 	var cadena = "<input type='date' id='fecha' name='select' min='" + fechaMin + "' max='" + fechaMax + "' onchange='formuliar();'>";
 	document.getElementById("div").innerHTML = cadena;
-
+	
 	document.cookie = "usuario=paco";
 	document.form.reset();
 }
