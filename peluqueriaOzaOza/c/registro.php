@@ -10,7 +10,7 @@
 	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
 	
 	if($nombre != "" && $apellidos != "" && $user != "" && $pass != ""){
-		setUsuario($user, $pass, $nombre, $apellidos);
+		setUsuario($user, md5($pass), $nombre, $apellidos);
 		$_SESSION ["usuario"] = $user;
 		header('Location: menu.php');
 	}

@@ -22,3 +22,6 @@
 	
 	echo getTemplate("registro");
 ?>
+
+
+
