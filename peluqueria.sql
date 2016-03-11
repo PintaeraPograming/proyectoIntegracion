@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2016 a las 01:19:49
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Tiempo de generación: 11-03-2016 a las 13:36:08
+-- Versión del servidor: 5.6.26
+-- Versión de PHP: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `peluqueria`
 --
-CREATE DATABASE IF NOT EXISTS `peluqueria` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `peluqueria`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,7 @@ USE `peluqueria`;
 -- Estructura de tabla para la tabla `citas`
 --
 
-CREATE TABLE `citas` (
+CREATE TABLE IF NOT EXISTS `citas` (
   `usuario` varchar(20) NOT NULL,
   `fecha` varchar(10) NOT NULL,
   `hora` varchar(5) NOT NULL,
@@ -41,20 +39,14 @@ CREATE TABLE `citas` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuario` varchar(20) NOT NULL,
-  `contrasenia` varchar(16) NOT NULL,
+  `contrasenia` varchar(50) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `apellidos` varchar(30) NOT NULL
+  `apellidos` varchar(30) NOT NULL,
+  `telefono` int(9) NOT NULL,
+  `movil` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`usuario`, `contrasenia`, `nombre`, `apellidos`) VALUES
-('admin', 'root', 'Pintaera', 'Pograming'),
-('usuario', '1234', 'Usuario', 'To''Loco');
 
 --
 -- Índices para tablas volcadas

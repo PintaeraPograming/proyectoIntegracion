@@ -1,32 +1,30 @@
 <?PHP
+	// Importamos los archivos php que contienen los metodos necesarios.
 	require "../m/baseDatos.php";
 	require "../m/metodos.php";
 	
-	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
-	
-	echo getTemplateTocho("menu", '{usuario}', $usuario);
-	
+	// Recogemos toda la información del formulario.
+	// En caso de que no este definido algun parametro, se le asigna el valor ''.
 	$nuevaCita = isset($_POST["nuevaCita"]) ? $_POST["nuevaCita"] : '';
 	$misCitas = isset($_POST["misCitas"]) ? $_POST["misCitas"] : '';
 	$salir = isset($_POST["salir"]) ? $_POST["salir"] : '';
-	
-	if ($nuevaCita != "" && $misCitas != "" && $salir != "") {
-		//echo "<script>document.location.reload();</script>";
+	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
 		
-	}else{
-		if($nuevaCita != ""){
-			header('Location: cita.php');
-			//echo getTemplateTocho("cita", '{usuario}', $usuario);
-		}
-		if($misCitas != ""){
-			header('Location: misCitas.php');
-		}
-		if($salir != ""){
-			unset($_SESSION["usuario"]);
-			header('Location: index.php');
-			//echo getTemplateTocho("inicio", '{mensajito}', "");
-		}
+	// Se realizan las redirecciones.
+	// Redirecciona a la pagina de citas.
+	if($nuevaCita != ""){
+		header('Location: cita.php');
+	}
+	// Redirecciona a la paginas de listar citas.
+	if($misCitas != ""){
+		header('Location: misCitas.php');
+	}
+	// Redirecciona al inicio.
+	if($salir != ""){
+		unset($_SESSION["usuario"]);
+		header('Location: index.php');
 	}
 	
-	
+	// Se llama a la plantilla y se imprime por pantalla.
+	echo getTemplateTocho("menu", '{usuario}', $usuario);
 ?>

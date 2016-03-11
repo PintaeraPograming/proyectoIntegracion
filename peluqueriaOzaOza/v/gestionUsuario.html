@@ -1,22 +1,17 @@
 <html>
 	<head>
-		<title>Gestion Usuario</title>
+		<title>Lista de usuario</title>
 		<link rel="shortcut icon" href="../src/img/icono.png">
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/js/script.js"></script>
 		<meta charset="UTF-8">
 	</head>
 	<body>
-				<h1>Bienvenido: nuevo usuario</h1>
+		<h1>Bienvenido: {usuario}</h1>
 		<form class="cita" name="form" action="../c/gestionUsuario.php" method="post">
-			<label class="texto" >Nombre: <input id="nombre" type='text' name="nombre" 
-			onblur="document.getElementById('usuario').value=document.getElementById('nombre').value"/></label>
-			<label class="texto">Apellidos: <input type='text' name="apellidos"/></label>
-			<label class="texto" >Usuario: <input id="usuario" type='text' name="usuario"/></label>
-			<label class="texto" >Contraseña: <input type='text' name="contrasenia"/></label>
-			
-			<br><br><input type='submit' name="registro" value='Registrarme'/>
+			<h1>{usuarios}</h1>
 			<button value="atras" name="atras">Atras</button>
-		</form>
+		</form>		
+		
 	</body>
 </html>

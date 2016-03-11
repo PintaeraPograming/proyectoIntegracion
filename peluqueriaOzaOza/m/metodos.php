@@ -16,9 +16,9 @@
 	// Obtiene el contenido de una plantilla html.
 	// Sustituye multiples parametros por una string para cada uno.
 	// Devuelve una string.
-	function getTemplateReContraTocho($pagina, $cajita){
+	function getTemplateReContraTocho($pagina, $array){
 		$html = getTemplate($pagina);
-		foreach($cajita as $remplazar=>$mensaje){
+		foreach($array as $remplazar=>$mensaje){
 			$html = str_replace($remplazar, $mensaje, $html);
 		}
 		return $html;

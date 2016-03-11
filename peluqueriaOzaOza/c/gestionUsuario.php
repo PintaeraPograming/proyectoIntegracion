@@ -1,26 +1,63 @@
 <?PHP
+	// Importamos los archivos php que contienen los metodos necesarios.
 	require "../m/baseDatos.php";
 	require "../m/metodos.php";
 	
-	$nombre = isset($_POST ["nombre"]) ? $_POST ["nombre"] : '';
-	$apellidos = isset($_POST ["apellidos"]) ? $_POST ["apellidos"] : '';
-	$user = isset($_POST ["usuario"]) ? $_POST ["usuario"] : '';
-	$pass = isset($_POST ["contrasenia"]) ? $_POST ["contrasenia"] : '';
-	
+	// Recogemos toda la información del formulario.
+	// En caso de que no este definido algun parametro, se le asigna el valor ''.
 	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
+	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
 	
-	if($nombre != "" && $apellidos != "" && $user != "" && $pass != ""){
-		setUsuario($user, $pass, $nombre, $apellidos);
-		$_SESSION ["usuario"] = $user;
-		header('Location: panelControl.php');
+	// Generamos la tabla que se va a imprimir por pantalla.
+	$resultado = getUsuarios();
+	if( $resultado->num_rows != 0){
+		$tabla = "<div class='divTabla'>
+					<table class='tabla'>
+						<th>Usuario</th>
+						<th>Contraseña</th>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Telefono</th>
+						<th>Móvil</th>";
+		while ($fila = $resultado->fetch_assoc()) {
+			$tabla .= "<tr><td>
+					<label>" . $fila['usuario'] . "</label>
+				</td>
+				<td>
+					<label>" . $fila['contrasenia'] . "</label>
+				</td>
+				<td>
+					<label>" . $fila['nombre'] . "</label>
+				</td>
+				<td>
+					<label>" . $fila['apellidos'] . "</label>
+				</td>
+				<td>
+					<label>" . $fila['telefono'] . "</label>
+				</td>
+				<td>
+					<label>" . $fila['movil'] . "</label>
+				</td></tr>";
+		}
+		$tabla .= "</table></div>";
+	}else{
+		$tabla = "No existen usuarios en la base de datos";
 	}
 	
-	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
+	// Declaracion del array que se pasara como parámetro para mostrar en la plantilla HTML.
+	$array = array (
+			"{usuario}" => $usuario,
+			"{usuarios}" => $tabla
+	);
+		
+	// Funcionalidad del boton.
+	// Boton atras, redirecciona al panel de control.
 	if($atras != ""){
 		header('Location: panelControl.php');
 	}
 	
-	echo getTemplate("registro");
+	// Se llama a la plantilla y se imprime por pantalla.
+	echo getTemplateReContraTocho ( "gestionUsuario", $array );
 ?>
 
 
