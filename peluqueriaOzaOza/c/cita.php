@@ -28,7 +28,7 @@
 	
 	// Generamos la tabla que se va a imprimir por pantalla.
 	$tabla = "<div class='divTabla'>
-				<table class='tabla'>
+				<table class='table table-striped'>
 					<th>Hora</th>
 					<th>$fecha</th>
 					<th>Motivo</th>";

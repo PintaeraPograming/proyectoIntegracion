@@ -1,18 +1,50 @@
-<html>
-	<head>
-		<title>Gestion citas</title>
-		<link rel="shortcut icon" href="../src/img/icono.png">
-		<link rel="stylesheet" href="../src/css/stilo.css"/>
-		<script type="text/javascript" src="../src/js/script.js"></script>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>Bienvenido: {usuario}</h1>
-		
-		<form class="cita" name="form" action="../c/menu.php" method="post">
-			<input type="submit" value="Nueva cita" name="nuevaCita">
-			<input type="submit" value="Mis citas" name="misCitas">
-			<input type="submit" value="Salir" name="salir">
-		</form>
-	</body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Menú</title>
+	<link rel="shortcut icon" href="../src/img/icono.png">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../src/js/script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Bienvenido: <span>{usuario}</span></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Menú</h2>
+			</div>
+			<form class="cita" name="form" action="../c/menu.php" method="post">
+				<button value="nuevaCita" name="nuevaCita">Nueva cita</button>
+				<button value="misCitas" name="misCitas">Mis citas</button>
+				<button value="salir" name="salir">Salir</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
 </html>

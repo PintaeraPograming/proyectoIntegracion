@@ -6,7 +6,7 @@
 	// Control de error en caso de que ocurra un error
 	// Devuelve un objeto mysqli
 	function conectar(){
-		$mysqli = new mysqli ( "localhost", "root", "", "peluqueria");
+		$mysqli = new mysqli ( "localhost", "root", "root", "peluqueria");
 		if ($mysqli->connect_errno) {
 			echo "Fallo la conexión con MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}

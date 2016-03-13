@@ -1,25 +1,69 @@
-<html>
-	<head>
-		<title>Registro</title>
-		<link rel="shortcut icon" href="../src/img/icono.png">
-		<link rel="stylesheet" href="../src/css/stilo.css" />
-		<script type="text/javascript" src="../src/js/script.js"></script>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>Bienvenido: nuevo usuario</h1>
-		<form class="cita" name="form" action="../c/registro.php" method="post">
-			<label class="texto">Nombre: <input id="nombre" type='text'
-				name="nombre"
-				onblur="document.getElementById('usuario').value=document.getElementById('nombre').value" /></label>
-			<label class="texto">Apellidos: <input type='text' name="apellidos" /></label> 
-			<label class="texto">Usuario: <input id="usuario" type='text' name="usuario" /></label> 
-			<label class="texto">Contraseña: <input type='password' name="contrasenia" /></label> 
-			<label class="texto">Telefono: <input type='text' name="telefono" /></label> 
-			<label class="texto">Movil: <input type='text' name="movil" /></label> 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Iniciar sesión</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+<!-- 	<link rel="stylesheet" href="../src/css/animate.css"> -->
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="../src/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Registráte</h2>
+			</div>
+			<form class="cita" name="form" action="../c/registro.php" method="post">
+			<label class="texto">Nombre:</label><br>
+			<input id="nombre" type='text' name="nombre" onblur="document.getElementById('usuario').value=document.getElementById('nombre').value" /><br>
+			<label for="username" class="texto">Apellidos:</label> </label><br>
+			<input type='text' name="apellidos" /><br>
+			<label class="texto">Usuario:</label> <br>
+			<input id="usuario" type='text' name="usuario" /><span><b>&nbsp;*</b></span><br>
+			<label class="texto">Contraseña:</label><br>
+			<input type='password' name="contrasenia" /><span><b>&nbsp;*</b></span>
+			<br>
+			<label class="texto">Telefono:</label><br>
+			<input type='number' name="telefono" max="9"/> 
+			<br>
+			<label class="texto">Movil:</label><br>
+			<input type='number' name="movil" max="9"/><span><b>&nbsp;*</b></span> 
 			<br><br>
-			<input type='submit' name="registro" value='Registrarme' />
+			<button type='submit' name="registro">Registrarme</button>&nbsp;
 			<button value="atras" name="atras">Atras</button>
 		</form>
-	</body>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
 </html>
