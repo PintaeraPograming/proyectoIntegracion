@@ -33,7 +33,7 @@
 			
 		$misCitas .= "</table>";
 	}else{
-		$misCitas = "No tienes ninguna cita";
+		$misCitas = "No hay citas que mostrar";
 	}
 	
 	// Declaracion del array que se pasara como parámetro para mostrar en la plantilla HTML.
