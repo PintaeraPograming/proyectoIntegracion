@@ -40,15 +40,15 @@
 		if ($resultado->num_rows == 0) {
 			$tabla .= "<td>" . $hora . "</td>
 					<td>
-						<input class='impute'type='text' name='" . $hora . "'>
-						<input class='impute' type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'>
+						<input type='text' name='" . $hora . "'>
+						<input type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'>
 					</td>
 					<td>
 						<select name='" . $i . "'>
 							<option>Corte</option>
 							<option>Peinado</option>
 							<option>Tinte</option>
-							<option>Mechas</option>	
+							<option>Mechas</option>
 						</select>
 					</td>";
 		} else {

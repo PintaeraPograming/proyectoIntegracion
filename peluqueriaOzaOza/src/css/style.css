@@ -17,7 +17,7 @@ h1#title {
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
 	margin: 0 auto;
 	padding-top: 30px;
-/* 	max-width: 300px; */
+	/*max-width: 300px;*/
 	text-align: center;
 	position: relative;
 	top: 0px;
@@ -86,7 +86,7 @@ p.small {
 }
 
 .login-box input {
-/* 	margin-bottom: 20px; */
+	margin-bottom: 20px;
 	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 2px;
@@ -124,57 +124,16 @@ p.small {
 	background-color: white;
 	color:black;
 	border:1px solid #444444;
-	
 }
 
-/* Para el JQuery*/
 .selected {
 	color: black!important;
 	transition: 0.5s;
 }
 
-/* Cosas magicas */
-footer{
-	float:right;
-}
+
 .prueba {
 	margin: 0;
 	padding: 0;
 	float:left;
-}
-th {     
-	font-size: 13px;   
-	font-weight: normal;     
-	padding: 8px;     
-	background: #888888;
-    border-top: 4px solid #888888;    
-    border-bottom: 1px solid #fff; 
-    color: black; 
-}
-table {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 12px;
-    margin: 0 auto;     
-    width: 480px; 
-    text-align: center;    
-    border-collapse: collapse; 
-}
-
-
-
-td {    
-	padding: 8px;     
-	background: #FFF;     
-	border-bottom: 1px solid black;
-    color: black;    
-    border-top: 1px solid transparent; 
-    font-weight: normal;
-}
-
-tr:hover td { 
-	background: #b2b2b2; 
-}
-.impute{
-/* 	margin-top:10px; */
-/* 	margin-bottom:-20px; */
 }

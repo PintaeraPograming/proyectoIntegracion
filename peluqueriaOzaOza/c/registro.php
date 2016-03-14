@@ -17,14 +17,15 @@
 	// Se llama a la funcion setUsuario.
 	// Se crea un usuario nuevo con los datos pasados por parametro.
 	// Se redirecciona al inicio.
+	if(!preg_match('/^[9|6|7][0-9]{8}$/', $movil)){
+		$movil = "";
+		echo "<script>alert('Numero de movil feo');</script>";
+	}
 	if($user != "" && $pass != "" && $movil != ""){
-		if(preg_match('/^[9|6|7][0-9]{8}$/', $movil)){
-			setUsuario($user, md5($pass), $nombre, $apellidos, $telefono , $movil);
-			$_SESSION ["usuario"] = $user;
-			header('Location: menu.php');
-		}else{
-			header('Location: registro.php');
-		}
+		
+		setUsuario($user, md5($pass), $nombre, $apellidos, $telefono , $movil);
+		$_SESSION ["usuario"] = $user;
+		header('Location: menu.php');
 	}
 	
 	// Funcionalidad de los botones.
