@@ -29,36 +29,40 @@
 				<div class="box-header">
 					<h2>Regístrate</h2>
 				</div>
-				<form class="cita" name="form" action="../c/registro.php" method="post">
+				<form class="cita" name="form" action="../c/registro.php" method="post" 
+				style="margin:0; padding:0; display:inline;">
 					<label for="nombre" class="texto">Nombre:</label>
 					<br>
 					<input id="nombre" type='text' name="nombre" onblur="document.getElementById('usuario').value=document.getElementById('nombre').value" />
-					<br>
+					<br><br>
 					<label for="apellidos" class="texto">Apellidos:</label> 
 					<br>
 					<input type='text' name="apellidos" />
+					<br><br>
+					<label for="usuario" class="texto">Usuario:<span><b>&nbsp;*</b></span></label>
 					<br> 
-					<label for="usuario" class="texto">Usuario:</label>
-					<br> 
-					<input id="usuario" type='text' name="usuario" required /><span><b>&nbsp;*</b></span>
+					<input id="usuario" type='text' name="usuario" required />
+					<br><br>
+					<label for="contraseña" class="texto">Contraseña:<span><b>&nbsp;*</b></span></label>
 					<br>
-					<label for="contraseña" class="texto">Contraseña:</label>
-					<br>
-					<input type='password' name="contrasenia" required /><span><b>&nbsp;*</b></span>
-					<br>
+					<input type='password' name="contrasenia" required />
+					<br><br>
 					<label for="telefono" class="texto">Teléfono:</label>
 					<br>
 					<input type='number' name="telefono" maxlength="9" /> 
-					<br>
-					<label for="movil" class="texto">Móvil:</label><br> <input type='number' name="movil" maxlength="9" required /><span><b>&nbsp;*</b></span>
-					<br>
-					<br>
-					<button type='submit' name="registro">Registrarme</button>
+					<br><br>
+					<label for="movil" class="texto">Móvil:<span><b>&nbsp;*</b></span></label>
+					<br> 
+					<input type='number' name="movil" maxlength="9" required />
+					<br><br><br>
+					<button type='submit' name="registro" style="float:left; margin-left:180px;">Enviar</button>
 				</form>
-				<form class="cita" name="form" action="../c/registro.php" method="post">
-					<br><button value="atras" name="atras">Atrás</button>
+				<form class="cita" name="form" action="../c/registro.php" method="post" style="margin:0; padding:0; display:inline;">
+					<br><button value="atras" name="atras" style="float:right; margin-right:183px;margin-top:-19px;">Atrás</button>
 				</form>
+				<br><br>
 			</div>
+			<br><br>
 		</div>
 		<footer>Pintaera Pograming&nbsp;&copy;</footer>
 	</body>
