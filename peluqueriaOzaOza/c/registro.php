@@ -19,7 +19,7 @@
 	// Se redirecciona al inicio.
 	if(!preg_match('/^[9|6|7][0-9]{8}$/', $movil)){
 		$movil = "";
-// 		echo "<script>alert('Numero de movil feo');</script>";
+		echo "<script>alert('Numero de movil feo');</script>";
 	}
 	if($user != "" && $pass != "" && $movil != ""){
 		

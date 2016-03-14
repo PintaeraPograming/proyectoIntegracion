@@ -14,7 +14,7 @@
 		$tabla = "<div class='divTabla'>
 					<table class='tabla'>
 						<th>Usuario</th>
-						<th>Contraseña</th>
+						<th>Contrase&ntilde;a</th>
 						<th>Nombre</th>
 						<th>Apellidos</th>
 						<th>Telefono</th>

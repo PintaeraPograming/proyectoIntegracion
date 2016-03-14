@@ -12,20 +12,20 @@
 			<!-- JavaScript -->
 			<script type="text/javascript" src="../src/js/script.js"></script>
 			<!-- Jquery -->
-			<script src="../src/js/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 			<!-- Bootstrap -->
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-			<script src="../src/js/bootstrap.min.js"></script>
+		<!--   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+		 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="top">
-				<h1 id="title" class="hidden"><span id="logo">Peluqueria <span>Oza Oza</span></span></h1>
+				<h1 id="title" class="hidden"><span id="logo">Peluquería <span>Oza Oza</span></span></h1>
 			</div>
 			<div class="login-box animated fadeInUp">
 				<div class="box-header">
-					<h2>Logueáte</h2>
+					<h2>Inicio de Sesión</h2>
 				</div>
 				<form action="../c/index.php" method="post">
 					<label for="username">Usuario</label>
@@ -35,8 +35,8 @@
 					<label for="password">Contraseña</label>
 					<br/>
 					<input type="password" id="password" name=contrasenia>
-					<br/>
-					<button type="submit">Iniciar sesión</button> &nbsp; <button value="registro" name="registro">Registráte</button>
+					<br/><br/>
+					<button type="submit">Iniciar sesión</button> &nbsp; <button value="registro" name="registro">Regístrate</button>
 					<br/>
 				</form>
 				<p class="small">{mensaje}</p>
@@ -45,6 +45,10 @@
 	</body>
 	<!-- Código JQuery -->
 	<script>
+		$(document).ready(function () {
+	    	$('#logo').addClass('animated fadeInDown');
+	    	$("input:text:visible:first").focus();
+		});
 		$('#username').focus(function() {
 			$('label[for="username"]').addClass('selected');
 		});

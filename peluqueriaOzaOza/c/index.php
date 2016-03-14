@@ -34,7 +34,7 @@
 				echo getTemplateTocho ( "menu", '{usuario}', $usuario );
 			}
 		} else {
-			echo getTemplateTocho ( "inicio", '{mensaje}', "Usuario o contraseña incorrectos" );
+			echo getTemplateTocho ( "inicio", '{mensaje}', "Usuario o contrase&ntilde;a incorrectos" );
 		}
 	} else {
 		echo getTemplateTocho ( "inicio", '{mensaje}', "" );

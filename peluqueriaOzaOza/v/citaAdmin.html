@@ -12,11 +12,12 @@
 		<!-- JavaScript -->
 		<script type="text/javascript" src="../src/js/script.js"></script>
 		<!-- Jquery -->
-		<script src="../src/js/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<!-- Bootstrap -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-		<script src="../src/js/bootstrap.min.js"></script>
+	<!--   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+	 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
 	<body onload="date();">
 		<div class="container">
 			<div class="top">
@@ -24,14 +25,14 @@
 			</div>
 			<div class="login-box animated fadeInUp">
 				<div class="box-header">
-					<h2>Gestion citas</h2>
+					<h2>Gestión citas</h2>
 				</div>
 				<form class="cita" name="form" action="../c/citaAdmin.php" method="post">
 					<label class="texto">Seleccione la fecha en la que desearia sacar una cita:</label>
 					<div id="div"></div>
 					<h3>{tabla}</h3>
 					<button type='submit' name="boton" value='Reservar'>Reservar</button>
-					<button value="atras" name="atras">Atras</button>
+					<button value="atras" name="atras">Atrás</button>
 				</form>
 			</div>
 		</div>
