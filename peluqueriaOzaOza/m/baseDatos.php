@@ -58,7 +58,7 @@
 		$resultado = conectar()->query( "SELECT * FROM usuarios WHERE usuario LIKE '$usuario'");
 		if($resultado->num_rows == 0){
 			conectar()->query("INSERT INTO usuarios (usuario, contrasenia, nombre, apellidos, telefono, movil) VALUES ('" . $usuario . "','" . $contraseña . "','" . $nombre . "','" . $apellidos ."','" . $telefono . "','" . $movil ."')");
-			echo "<script>alert('¡Te has registrado con éxito!');document.location.reload();";	
+			echo "<script>alert('¡Te has registrado con &eacute;xito!');document.location.reload();";	
 		}else{
 			echo "<script>alert('¡Ya existe ese nombre de usuario!');</script>";
 		}

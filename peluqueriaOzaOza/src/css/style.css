@@ -127,14 +127,48 @@ p.small {
 	
 }
 
+/* Para el JQuery*/
 .selected {
 	color: black!important;
 	transition: 0.5s;
 }
 
-
+/* Cosas magicas */
+footer{
+	float:right;
+}
 .prueba {
 	margin: 0;
 	padding: 0;
 	float:left;
+}
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 0 auto;     
+    width: 480px; 
+    text-align: center;    
+    border-collapse: collapse; 
+}
+
+th {     
+	font-size: 13px;     
+	font-weight: normal;     
+	padding: 8px;     
+	background: #888888;
+    border-top: 4px solid #888888;    
+    border-bottom: 1px solid #fff; 
+    color: black; }
+
+td {    
+	padding: 8px;     
+	background: #BBBBBB;     
+	border-bottom: 1px solid #fff;
+    color: black;    
+    border-top: 1px solid transparent; 
+    font-weight: normal;  
+}
+
+tr:hover td { 
+	background: gray; 
 }

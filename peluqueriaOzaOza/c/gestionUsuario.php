@@ -14,17 +14,13 @@
 		$tabla = "<div class='divTabla'>
 					<table class='tabla'>
 						<th>Usuario</th>
-						<th>Contrase&ntilde;a</th>
 						<th>Nombre</th>
 						<th>Apellidos</th>
-						<th>Telefono</th>
-						<th>Móvil</th>";
+						<th>Tel&eacute;fono</th>
+						<th>M&oacute;vil</th>";
 		while ($fila = $resultado->fetch_assoc()) {
 			$tabla .= "<tr><td>
 					<label>" . $fila['usuario'] . "</label>
-				</td>
-				<td>
-					<label>" . $fila['contrasenia'] . "</label>
 				</td>
 				<td>
 					<label>" . $fila['nombre'] . "</label>
