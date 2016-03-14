@@ -12,18 +12,18 @@
 		<!-- JavaScript -->
 		<script type="text/javascript" src="../src/js/script.js"></script>
 		<!-- Jquery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="../src/js/jquery.min.js"></script>
 		<!-- Bootstrap -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="../src/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="top">
-				<h1 id="title" class="hidden">
-					</span>
-				</h1>
+				<div class="top">
+					<h1 id="title" class="hidden"><span id="logo">Bienvenido: <span>Nuevo Usuario</span></span></h1>
+				</div>
 			</div>
 			<div class="login-box animated fadeInUp">
 				<div class="box-header">
@@ -31,18 +31,28 @@
 				</div>
 				<form class="cita" name="form" action="../c/registro.php"
 					method="post">
-					<label class="texto">Nombre:</label><br> <input id="nombre"
-						type='text' name="nombre"
-						onblur="document.getElementById('usuario').value=document.getElementById('nombre').value" /><br>
-					<label for="username" class="texto">Apellidos:</label> </label><br> <input
-						type='text' name="apellidos" /><br> <label class="texto">Usuario:</label>
-					<br> <input id="usuario" type='text' name="usuario" required /><span><b>&nbsp;*</b></span><br>
-					<label class="texto">Contraseña:</label><br> <input
-						type='password' name="contrasenia" required /><span><b>&nbsp;*</b></span>
-					<br> <label class="texto">Telefono:</label><br> <input
-						type='number' name="telefono" maxlength="9" /> <br> <label
-						class="texto">Movil:</label><br> <input type='number'
-						name="movil" maxlength="9" required /><span><b>&nbsp;*</b></span> <br>
+					<label for="nombre" class="texto">Nombre:</label>
+					<br>
+					<input id="nombre" type='text' name="nombre" onblur="document.getElementById('usuario').value=document.getElementById('nombre').value" />
+					<br>
+					<label for="apellidos" class="texto">Apellidos:</label> 
+					<br>
+					<input type='text' name="apellidos" />
+					<br> 
+					<label for="usuario" class="texto">Usuario:</label>
+					<br> 
+					<input id="usuario" type='text' name="usuario" required /><span><b>&nbsp;*</b></span>
+					<br>
+					<label for="contraseña" class="texto">Contraseña:</label>
+					<br>
+					<input type='password' name="contrasenia" required /><span><b>&nbsp;*</b></span>
+					<br>
+					<label for="telefono" class="texto">Telefono:</label>
+					<br>
+					<input type='number' name="telefono" maxlength="9" /> 
+					<br>
+					<label for="movil" class="texto">Movil:</label><br> <input type='number' name="movil" maxlength="9" required /><span><b>&nbsp;*</b></span>
+					<br>
 					<br>
 					<button type='submit' name="registro">Registrarme</button>
 					&nbsp;
@@ -51,4 +61,43 @@
 			</div>
 		</div>
 	</body>
+	<!-- Código JQuery -->
+	<script>
+		$('#nombre').focus(function() {
+			$('label[for="nombre"]').addClass('selected');
+		});
+		$('#nombre').blur(function() {
+			$('label[for="nombre"]').removeClass('selected');
+		});
+		$('#apellidos').focus(function() {
+			$('label[for="apellidos"]').addClass('selected');
+		});
+		$('#apellidos').blur(function() {
+			$('label[for="apellidos"]').removeClass('selected');
+		});
+		$('#usuario').focus(function() {
+			$('label[for="usuario"]').addClass('selected');
+		});
+		$('#usuario').blur(function() {
+			$('label[for="usuario"]').removeClass('selected');
+		});
+		$('#contraseña').focus(function() {
+			$('label[for="contraseña"]').addClass('selected');
+		});
+		$('#contraseña').blur(function() {
+			$('label[for="contraseña"]').removeClass('selected');
+		});
+		$('#telefono').focus(function() {
+			$('label[for="telefono"]').addClass('selected');
+		});
+		$('#telefono').blur(function() {
+			$('label[for="telefono"]').removeClass('selected');
+		});
+		$('#movil').focus(function() {
+			$('label[for="movil"]').addClass('selected');
+		});
+		$('#movil').blur(function() {
+			$('label[for="movil"]').removeClass('selected');
+		});
+	</script>
 </html>
