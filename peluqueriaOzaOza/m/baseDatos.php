@@ -58,9 +58,9 @@
 		$resultado = conectar()->query( "SELECT * FROM usuarios WHERE usuario LIKE '$usuario'");
 		if($resultado->num_rows == 0){
 			conectar()->query("INSERT INTO usuarios (usuario, contrasenia, nombre, apellidos, telefono, movil) VALUES ('" . $usuario . "','" . $contraseña . "','" . $nombre . "','" . $apellidos ."','" . $telefono . "','" . $movil ."')");
-			echo "<script>alert('¡Te has registrado con &eacute;xito!');document.location.reload();";	
+			echo "<script>alert('Te has registrado correctamente!');document.location.reload();";	
 		}else{
-			echo "<script>alert('¡Ya existe ese nombre de usuario!');</script>";
+			echo "<script>alert('Ya existe ese nombre de usuario!');</script>";
 		}
 	}
 	
@@ -74,7 +74,7 @@
 			
 		if($resultado->num_rows == 0){
 			conectar()->query("INSERT INTO citas (usuario, fecha, hora, motivo) VALUES ('" . $usuario . "','" . $fecha . "','" . $hora . "','" . $motivo ."')");
-			echo "<script>alert('¡Se ha hecho la reserva con éxito!');document.location.reload();</script>";
+			echo "<script>alert('Se ha hecho la reserva correctamente!');document.location.reload();</script>";
 		}
 	}
 	
@@ -86,7 +86,7 @@
 		$resultado = conectar()->query( "SELECT * FROM citas WHERE fecha LIKE '$fecha' AND hora LIKE '$hora'");
 		if($resultado->num_rows == 1){
 			conectar()->query("DELETE FROM citas WHERE fecha = '$fecha' AND hora = '$hora'");
-			echo "<script>alert('¡Se ha eliminado la cita!');document.location.reload();</script>";
+			echo "<script>alert('Se ha eliminado la cita!');document.location.reload();</script>";
 		}
 	}
 	
