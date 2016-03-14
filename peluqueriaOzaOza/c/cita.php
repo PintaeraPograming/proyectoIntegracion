@@ -31,7 +31,7 @@
 				<table class='table table-striped'>
 					<th>Hora</th>
 					<th>$fecha</th>
-					<th>Motivo</th>";
+					<th>Servicio</th>";
 	for($i = 8; $i < 17; $i ++) {
 		$hora = $i . ":00";
 		$tabla .= "<tr>";
@@ -45,7 +45,7 @@
 								<option>Corte</option>
 								<option>Peinado</option>
 								<option>Tinte</option>
-								<option>Blanqueamiento</option>
+								<option>Mechas</option>
 						</select>
 					</td>";
 		} else {

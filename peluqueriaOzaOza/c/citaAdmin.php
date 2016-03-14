@@ -32,7 +32,7 @@
 				<table class='tabla'>
 					<th>Hora</th>
 					<th>$fecha</th>
-					<th>Motivo</th>";
+					<th>Servicio</th>";
 	for($i = 8; $i < 17; $i ++) {
 		$hora = $i . ":00";
 		$tabla .= "<tr>";
@@ -40,8 +40,8 @@
 		if ($resultado->num_rows == 0) {
 			$tabla .= "<td>" . $hora . "</td>
 					<td>
-						<input class='impute'type='text' name='" . $hora . "'>
-						<input class='impute' type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'>
+						<input type='text' name='" . $hora . "'>
+						<input type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'>
 					</td>
 					<td>
 						<select name='" . $i . "'>
