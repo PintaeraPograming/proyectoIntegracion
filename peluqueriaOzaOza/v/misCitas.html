@@ -1,17 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 	<head>
-		<title>Gestion citas</title>
+		<meta charset="utf-8">
+		<title>Iniciar sesión</title>
+		<!-- Icono pestaña -->
 		<link rel="shortcut icon" href="../src/img/icono.png">
-		<link rel="stylesheet" href="../src/css/stilo.css"/>
+		<!-- Fuentes -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+		<!-- CSS -->
+		<link rel="stylesheet" href="../src/css/style.css">
+		<!-- JavaScript -->
 		<script type="text/javascript" src="../src/js/script.js"></script>
-		<meta charset="UTF-8">
-	</head>
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+	 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	</head>
 	<body>
-		<h1>Bienvenido: {usuario}</h1>
-		
-		<form class="cita" name="form" action="../c/misCitas.php" method="post">
-			<label class="texto">{misCitas}</label>
-			<button value="atras" name="atras">Atras</button>
-		</form>
+		<div class="container">
+			<div class="top">
+				<h1 id="title" class="hidden"><span id="logo">Bienvenido: <span>{usuario}</span></span></h1>
+			</div>
+			<div class="login-box animated fadeInUp">
+				<div class="box-header">
+					<h2>Mis citas</h2>
+				</div>
+				<form class="cita" name="form" action="../c/misCitas.php" method="post">
+					<label class="texto">{misCitas}</label><br><br>
+					<button value="atras" name="atras">Atras</button>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
