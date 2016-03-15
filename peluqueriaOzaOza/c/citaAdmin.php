@@ -32,7 +32,7 @@
 				<table class='tabla'>
 					<th>Hora</th>
 					<th>$fecha</th>
-					<th>Servicio</th>";
+					<th>Servicio</th><th></th>";
 	for($i = 8; $i < 17; $i ++) {
 		$hora = $i . ":00";
 		$tabla .= "<tr>";
@@ -50,7 +50,7 @@
 							<option>Tinte</option>
 							<option>Mechas</option>	
 						</select>
-					</td>";
+					</td><td></td>";
 		} else {
 			while ($fila = $resultado->fetch_assoc()) {
 				$tabla .= "<td>
