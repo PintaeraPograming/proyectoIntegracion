@@ -13,6 +13,7 @@
 	$movil = isset($_POST ["movil"]) ? $_POST ["movil"] : '';
 	$usuario = isset($_SESSION ["usuario"]) ? $_SESSION ["usuario"] : '';
 	$atras = isset($_POST["atras"]) ? $_POST["atras"] : '';
+	$mensaje = isset ( $_SESSION ["mensaje"] ) ? $_SESSION ["mensaje"] : '';
 	
 	// Se llama a la funcion setUsuario.
 	// Se crea un usuario nuevo con los datos pasados por parametro.
@@ -20,9 +21,11 @@
 	if($user != "" && $pass != "" && $movil != ""){
 		if(preg_match('/^[9|6|7][0-9]{8}$/', $movil)){
 			setUsuario($user, md5($pass), $nombre, $apellidos, $telefono , $movil);
+// 			$_SESSION ["mensaje"] = "Usuario creado correctamente";
 			$_SESSION ["usuario"] = $user;
 			header('Location: menu.php');
 		}else{
+			$_SESSION ["mensaje"] = "Error al crear el usuario";
 			header('Location: registro.php');
 		}
 	}
@@ -34,5 +37,5 @@
 	}
 	
 	// Se llama a la plantilla y se imprime por pantalla.
-	echo getTemplate("registro");
+	echo getTemplateTocho("registro", "{mensaje}", $mensaje);
 ?>

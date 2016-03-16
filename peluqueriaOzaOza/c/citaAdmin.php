@@ -54,13 +54,13 @@
 		} else {
 			while ($fila = $resultado->fetch_assoc()) {
 				$tabla .= "<td>
-							<label>" . $hora . "</label>
+							" . $hora . "
 						</td>
 						<td>
-							<label>" . $fila['usuario'] . "</label>
+							" . $fila['usuario'] . "
 						</td>
 						<td>
-							<label>" . $fila['motivo'] . "</label>
+							" . $fila['motivo'] . "
 						</td>
 						<td>
 							<button value='$fecha#$hora' name='eliminar'>Eliminar</button>

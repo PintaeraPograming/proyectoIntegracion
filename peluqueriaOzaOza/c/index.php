@@ -5,6 +5,7 @@
 	
 	// Se elimina el usuaio de la session.
 	unset ( $_SESSION ["usuario"] );
+	unset ( $_SESSION ["mensaje"] );
 	
 	// Recogemos toda la información del formulario.
 	// En caso de que no este definido algun parametro, se le asigna el valor ''.

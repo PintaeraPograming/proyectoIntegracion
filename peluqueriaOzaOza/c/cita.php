@@ -49,14 +49,11 @@
 						</select>
 					</td>";
 		} else {
-			$tabla .= "<td>
-						<label>" . $hora . "</label>
+			$tabla .= "<td class='reservado'>
+						" . $hora . "
 					</td>
-					<td>
-						<label>Reservado</label>
-					</td>
-					<td>
-						<label>Reservado</label>
+					<td class='reservado' colspan='2'>
+						Reservado
 					</td>";
 		}
 		$tabla .= "</tr>";
