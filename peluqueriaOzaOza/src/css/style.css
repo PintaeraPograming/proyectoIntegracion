@@ -201,3 +201,8 @@ footer{
 	bottom:0;
 	right:0;
 }
+.radio{
+	color:blue;
+	background:blue;
+	width:50px;
+}

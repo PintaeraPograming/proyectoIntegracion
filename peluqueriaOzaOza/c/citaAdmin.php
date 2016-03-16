@@ -41,7 +41,6 @@
 			$tabla .= "<td>" . $hora . "</td>
 					<td>
 						<input type='text' name='" . $hora . "'>
-						<input type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'>
 					</td>
 					<td>
 						<select name='" . $i . "'>
@@ -50,7 +49,7 @@
 							<option>Tinte</option>
 							<option>Mechas</option>	
 						</select>
-					</td><td></td>";
+					</td><td><input class='radio' type='radio' id='s' name='reserva' value='" . $hora  . "#" . $i . "'></td>";
 		} else {
 			while ($fila = $resultado->fetch_assoc()) {
 				$tabla .= "<td>
